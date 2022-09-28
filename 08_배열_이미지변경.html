@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 변경</title>
+    <link href="css/08.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="cont01">
+        <div>
+            <img id="bg_img" src="img/food2.jpg" alt="음식">
+            <div class="info">
+                <strong>2022.09.26 월요일</strong>
+                <h3>컨텐츠 제목 작성</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, debitis blanditiis rem quam at
+                    deleniti! Explicabo, ab doloribus natus iste unde incidunt? Facere voluptatem minus officiis quaerat
+                    molestiae quae alias!</p>
+                <button id="btn">이미지보기
+                    <span id="num_text">1</span>/3
+                </button>
+            </div><!-- .info end -->
+        </div>
+    </section><!-- .cont01 end -->
+
+    <script>
+        let btn = document.getElementById('btn');
+        let sectionImg = document.getElementById('bg_img');
+
+        let img1 = 'img/food2.jpg';
+        let img2 = 'img/food3.jpg';
+        let img3 = 'img/food4.jpg';
+        let imgList = [img1, img2, img3];
+
+        let i = 0;
+        let numText = document.getElementById('num_text');
+        let numList = [1, 2, 3];
+        let num = 0;
+
+        btn.onclick = function () {
+            i++;
+            num++;
+
+            if (i == imgList.length) {
+                i = 0;
+                num = 0;
+            }
+            sectionImg.src = imgList[i];
+            numText.innerText = numList[num];
+        }
+        //btn을 클릭했을 때 이벤트 실행
+        //버튼을 클릭할 때 마다 i값을 증감;
+        //조건문 i값이 imgList가 가지는 갯수와 동일할 때
+        //i값은 0
+
+        //변수명 sectionImg의 경로는 imgList이다.
+
+    </script>
+</body>
+
+</html>
